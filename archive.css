@@ -1,0 +1,338 @@
+/* ── Base override for archive ── */
+body {
+  font-family: var(--font-mono);
+  background: var(--white);
+}
+
+/* ── Archive Header ── */
+.arch-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: start;
+  padding: 16px 20px;
+  border-bottom: var(--border);
+  gap: 24px;
+}
+
+.arch-logo {
+  font-family: var(--font-sans);
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.arch-logo sup {
+  font-size: 14px;
+  font-weight: 900;
+  vertical-align: super;
+}
+
+.arch-tagline {
+  font-size: 11px;
+  line-height: 1.5;
+  color: #222;
+  max-width: 340px;
+  font-family: var(--font-mono);
+}
+
+.arch-nav {
+  display: flex;
+  gap: 18px;
+  font-size: 12px;
+  font-family: var(--font-sans);
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.arch-nav a:hover {
+  text-decoration: underline;
+}
+
+/* ── Category Tabs ── */
+.cat-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: var(--border);
+}
+
+.cat-tab {
+  padding: 14px 20px;
+  font-size: clamp(22px, 3.5vw, 42px);
+  font-weight: 900;
+  font-family: var(--font-sans);
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  border-right: var(--border);
+  cursor: pointer;
+  line-height: 1;
+  transition: background 0.12s;
+}
+
+.cat-tab:last-child {
+  border-right: none;
+}
+
+.cat-tab:hover,
+.cat-tab.active {
+  background: var(--black);
+  color: var(--white);
+}
+
+/* ── Intro Text ── */
+.arch-intro {
+  padding: 22px 20px;
+  border-bottom: var(--border);
+  font-size: 16px;
+  line-height: 1.65;
+  font-family: var(--font-mono);
+  text-align: justify;
+  max-width: 900px;
+}
+
+/* ── Spotlight ── */
+.spotlight-section {
+  border-bottom: var(--border);
+  padding: 0;
+}
+
+.spotlight-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  border-bottom: var(--border);
+}
+
+.spotlight-header h2 {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-family: var(--font-sans);
+  text-align: center;
+  flex: 1;
+}
+
+.spotlight-arrow {
+  font-size: 18px;
+  cursor: pointer;
+  user-select: none;
+  font-family: var(--font-sans);
+  width: 30px;
+}
+
+.spotlight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.spotlight-item {
+  border-right: var(--border);
+  display: flex;
+  flex-direction: column;
+}
+
+.spotlight-item:last-child {
+  border-right: none;
+}
+
+.spotlight-thumb {
+  width: 100%;
+  aspect-ratio: 4 / 3.2;
+  background: var(--light-gray);
+  overflow: hidden;
+  position: relative;
+  border-bottom: var(--border);
+}
+
+.spotlight-thumb .s-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--white);
+  padding: 3px 6px;
+  font-size: 11px;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.35;
+  max-width: 80%;
+}
+
+.spotlight-thumb .s-tag.inverted {
+  background: var(--black);
+  color: var(--white);
+}
+
+.spotlight-caption {
+  padding: 10px 14px 14px;
+  font-size: 11px;
+  line-height: 1.55;
+  font-family: var(--font-mono);
+}
+
+.spotlight-caption strong {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: underline;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+/* spotlight fill colors */
+.s-fill-a { background: #d0c8b8; }
+.s-fill-b { background: #111; }
+.s-fill-c { background: #c5c5c5; }
+
+/* ── Dashed Rule ── */
+.dashed-rule {
+  border: none;
+  border-top: 2px dashed var(--black);
+  margin: 0;
+}
+
+/* ── Search Bar ── */
+.search-section {
+  padding: 18px 20px 10px;
+  border-bottom: var(--border);
+}
+
+.search-wrap {
+  display: flex;
+  align-items: center;
+  border: var(--border);
+  padding: 12px 16px;
+  gap: 10px;
+}
+
+.search-wrap input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  background: transparent;
+  color: var(--black);
+}
+
+.search-wrap input::placeholder {
+  color: #888;
+}
+
+.search-wrap .search-icon {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.suggested {
+  margin-top: 10px;
+  font-size: 12px;
+  font-family: var(--font-mono);
+  line-height: 1.6;
+}
+
+.suggested span {
+  margin-right: 4px;
+}
+
+.suggested a {
+  text-decoration: underline;
+  margin-right: 10px;
+}
+
+.suggested a:hover {
+  text-decoration: none;
+}
+
+/* ── Items Grid ── */
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-top: var(--border);
+}
+
+.grid-item {
+  border-right: var(--border);
+  border-bottom: var(--border);
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-item:nth-child(5n) {
+  border-right: none;
+}
+
+.grid-item-thumb {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: var(--light-gray);
+  overflow: hidden;
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #e8c400;
+  font-size: 9px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+}
+
+.grid-item-info {
+  padding: 10px 12px 14px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.5;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.grid-item-info .item-title {
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.grid-item-info .item-tags {
+  color: #444;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.grid-item-info .item-tags span::before {
+  content: '• ';
+}
+
+.grid-item-info .item-price {
+  margin-top: 6px;
+  font-size: 11px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* grid fill colors */
+.gf-1 { background: #1a1a1a; }
+.gf-2 { background: #c8c0b0; }
+.gf-3 { background: #2a2a2a; }
+.gf-4 { background: #b8b4ac; }
+.gf-5 { background: #d8522a; }
+.gf-6 { background: #e0d8cc; }
+.gf-7 { background: #383838; }
+.gf-8 { background: #c0b8a8; }
+.gf-9 { background: #888; }
+.gf-10 { background: #f0ede6; }
