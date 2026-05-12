@@ -1,7 +1,7 @@
 /* ── Header ── */
 .site-header {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 2fr;
   align-items: start;
   padding: 18px 24px;
   border-bottom: var(--border);
@@ -11,7 +11,6 @@
 .site-header .logo {
   font-size: 13px;
   font-weight: 400;
-  letter-spacing: 0;
   line-height: 1.3;
 }
 
@@ -29,19 +28,40 @@
 }
 
 .site-header .description .socials a::before {
-  content: '↳ ';
+  content: '\21b3 ';
 }
 
-.site-header nav {
-  text-align: right;
-  font-size: 13px;
-  display: flex;
-  justify-content: flex-end;
-  gap: 14px;
+/* ── 5-Tab Nav (shared style, also used by archive via archive.css) ── */
+.cat-tabs {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-bottom: var(--border);
 }
 
-.site-header nav a:hover {
-  text-decoration: underline;
+.cat-tab {
+  display: block;
+  padding: 14px 20px;
+  font-size: clamp(16px, 2.6vw, 34px);
+  font-weight: 900;
+  font-family: var(--font-sans);
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  border-right: var(--border);
+  cursor: pointer;
+  line-height: 1;
+  text-decoration: none;
+  color: var(--black);
+  transition: background 0.12s;
+}
+
+.cat-tab:last-child {
+  border-right: none;
+}
+
+.cat-tab:hover,
+.cat-tab.active {
+  background: var(--black);
+  color: var(--white);
 }
 
 /* ── Intro Arrow ── */
@@ -76,7 +96,6 @@
 .project-item {
   display: flex;
   flex-direction: column;
-  gap: 0;
 }
 
 .project-item .thumb {
@@ -106,7 +125,7 @@
   font-weight: 500;
 }
 
-/* placeholder fill colors for items without images */
+/* placeholder fill colors */
 .thumb-fill-1 { background: #c8c8c8; }
 .thumb-fill-2 { background: #1a1a1a; }
 .thumb-fill-3 { background: #e2e2e2; }
@@ -116,7 +135,6 @@
 .thumb-fill-7 { background: #d4cfc8; }
 .thumb-fill-8 { background: #888; }
 
-/* inner label overlays (like The Silo / Nordhavn) */
 .thumb-overlay {
   position: absolute;
   bottom: 10px;
@@ -126,7 +144,6 @@
   font-weight: 500;
   color: var(--white);
   line-height: 1.2;
-  mix-blend-mode: normal;
 }
 
 .thumb-overlay.dark {
