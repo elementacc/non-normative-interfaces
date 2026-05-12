@@ -7,7 +7,7 @@ body {
 /* ── Archive Header ── */
 .arch-header {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto 1fr;
   align-items: start;
   padding: 16px 20px;
   border-bottom: var(--border);
@@ -33,34 +33,21 @@ body {
   font-size: 11px;
   line-height: 1.5;
   color: #222;
-  max-width: 340px;
+  max-width: 540px;
   font-family: var(--font-mono);
 }
 
-.arch-nav {
-  display: flex;
-  gap: 18px;
-  font-size: 12px;
-  font-family: var(--font-sans);
-  align-items: flex-start;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-}
-
-.arch-nav a:hover {
-  text-decoration: underline;
-}
-
-/* ── Category Tabs ── */
+/* ── Nav Tabs (5-col) ── */
 .cat-tabs {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   border-bottom: var(--border);
 }
 
 .cat-tab {
+  display: block;
   padding: 14px 20px;
-  font-size: clamp(22px, 3.5vw, 42px);
+  font-size: clamp(16px, 2.6vw, 34px);
   font-weight: 900;
   font-family: var(--font-sans);
   letter-spacing: -0.01em;
@@ -68,6 +55,8 @@ body {
   border-right: var(--border);
   cursor: pointer;
   line-height: 1;
+  text-decoration: none;
+  color: var(--black);
   transition: background 0.12s;
 }
 
@@ -315,24 +304,30 @@ body {
 }
 
 .grid-item-info .item-tags span::before {
-  content: '• ';
+  content: '\2022 ';
 }
 
 .grid-item-info .item-price {
   margin-top: 6px;
   font-size: 11px;
+}
+
+.grid-item-info .item-price a {
   text-decoration: underline;
-  cursor: pointer;
+}
+
+.grid-item-info .item-price a:hover {
+  text-decoration: none;
 }
 
 /* grid fill colors */
-.gf-1 { background: #1a1a1a; }
-.gf-2 { background: #c8c0b0; }
-.gf-3 { background: #2a2a2a; }
-.gf-4 { background: #b8b4ac; }
-.gf-5 { background: #d8522a; }
-.gf-6 { background: #e0d8cc; }
-.gf-7 { background: #383838; }
-.gf-8 { background: #c0b8a8; }
-.gf-9 { background: #888; }
+.gf-1  { background: #1a1a1a; }
+.gf-2  { background: #c8c0b0; }
+.gf-3  { background: #2a2a2a; }
+.gf-4  { background: #b8b4ac; }
+.gf-5  { background: #d8522a; }
+.gf-6  { background: #e0d8cc; }
+.gf-7  { background: #383838; }
+.gf-8  { background: #c0b8a8; }
+.gf-9  { background: #888; }
 .gf-10 { background: #f0ede6; }
